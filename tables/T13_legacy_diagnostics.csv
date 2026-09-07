@@ -1,0 +1,6 @@
+stat,window,n,value
+"corr(IPI_legacy, IPI_official)",1994Q1-2020Q4,108,0.548
+"corr(IPI_legacy, IPI_official)",1994Q1-2001Q4,32,0.221
+"corr(IPI_legacy, IPI_official)",2002Q1-2010Q4,36,0.645
+"corr(IPI_legacy, IPI_official)",2011Q1-2020Q4,40,0.422
+share of quarterly money growth repeated within year (interpolation signature),1976Q1-2024Q4,195,0.226
