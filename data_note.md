@@ -93,3 +93,26 @@ Quarterly values are three-month averages of the official monthly series.
 | `05_tunisie_officiel_trimestriel_1993_2026.csv` | quarterly official series (IPI, INF, M2, LM2, LM2 adjusted, TMM) |
 | `07_tunisie_analysis_officiel_1994Q1_2020Q4.csv` | analysis file used in the paper (n = 108) |
 | `panel_annual_30pays_1976_2024.csv` | auxiliary multi-country annual panel (World Bank API) for external-validity checks; not used in the paper's tables |
+
+---
+
+## Addendum v3 (2026-09-29) — système principal en NIVEAUX
+
+Le système principal du manuscrit est désormais estimé en **log niveaux** :
+{log IPI (base 2010), log CPI, log M2, TMM}, 1994Q1–2020Q4 (n = 108), construit par
+`code/officiel_v3_levels.py` (une commande, depuis la racine du paquet).
+
+- **Fichier dérivé** : `data/derived/08_tunisie_levels_officiel_1994Q1_2020Q4.csv`
+  (moyennes trimestrielles des séries mensuelles officielles ; log pour IPI, CPI, M2).
+- **Déterministes** : dummies saisonnières Q2–Q4 (saisonnalité résiduelle de l'IPI mensuel :
+  F = 1.61, p = 0.095) et dummies de rupture 2011Q1 / 2020Q1 (LR = 22.08, p = 0.005).
+- **Rang** : Johansen trace + max-eigenvalue, 2 specs × 3 lags, critiques Osterwald–Lenum
+  (fournies par statsmodels) ; rang 1 préféré, rang 2 non exclu à k = 2 (constante seule).
+- **VECM** : ML complet (rank 1, k_ar_diff = 2) ; α conditionnels au β ML avec s.e. OLS
+  équation par équation ; tests LR d'exogénéité faible χ²(1).
+- **IRF/FEVD** : représentation MA du VECM ; Cholesky (lipi, lcpi, lm2, r) + 2 ordres
+  alternatifs + FEVD généralisées (Pesaran–Shin) ; bandes 95 % bootstrap (500 réplications,
+  récursion VECM).
+- Les tables `output_v3/T1–T11` + figures `fig1–3_v3` sont les sorties du système principal.
+  L'ancien dossier `output/` (T1–T13, système en croissances) est conservé comme
+  **exhibit de provenance** (T12/T13 cités dans le manuscrit §3.10).

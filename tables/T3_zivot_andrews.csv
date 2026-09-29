@@ -1,9 +1,0 @@
-variable,trend,stat,pvalue,break_endogene_modeleC
-IPI,c,-4.415,0.147,2009Q1
-IPI,ct,-4.47,0.225,2009Q1
-INF,c,-3.63,0.594,1999Q3
-INF,ct,-4.436,0.242,1999Q3
-LM2,c,-3.911,0.407,1998Q1
-LM2,ct,-4.737,0.125,1998Q1
-r,c,-3.704,0.545,1998Q2
-r,ct,-3.515,0.804,1998Q2

@@ -1,0 +1,10 @@
+test,stat,p
+LR dummies 2011Q1+2020Q1 (VEC),22.084,0.00476
+Chow 2011Q1 eq lipi,1.685,0.080493
+Chow 2011Q1 eq lcpi,0.964,0.493615
+Chow 2011Q1 eq lm2,0.867,0.589452
+Chow 2011Q1 eq r,1.642,0.091049
+Chow 2020Q1 eq lipi,4.921,3e-06
+Chow 2020Q1 eq lcpi,0.35,0.980851
+Chow 2020Q1 eq lm2,0.111,0.999952
+Chow 2020Q1 eq r,0.662,0.793011
